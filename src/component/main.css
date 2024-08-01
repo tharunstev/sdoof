@@ -1,0 +1,78 @@
+/* Styling for Recipe component */
+.comp-data {
+  display: flex;
+}
+
+.recipe-data {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 16px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.recipe-data:hover {
+  transform: scale(0.9);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-data img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.recipe-data h1 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.recipe-data h2 {
+  font-size: 1.3rem;
+  color: #555;
+  margin: 16px 0 8px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.recipe-data p {
+  font-size: 1rem;
+  color: #666;
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+.recipe-data p:nth-of-type(odd) {
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.recipe-data .ingredients,
+.recipe-data .instructions {
+  margin-top: 16px;
+}
+
+.recipe-data .ingredients p,
+.recipe-data .instructions p {
+  margin: 4px 0;
+}
+
+.recipe-data .ingredients p {
+  background-color: #eef;
+  padding: 6px;
+  border-left: 4px solid #aaf;
+}
+
+.recipe-data .instructions p {
+  background-color: #ffe;
+  padding: 6px;
+  border-left: 4px solid #faa;
+}
