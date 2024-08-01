@@ -10,6 +10,7 @@ const Recipe = ({ search, cuisine }) => {
   const [page, setPage] = useState(1);
   const [perpage, setPerPage] = useState(3);
 
+
   useEffect(() => {
     fetch();
   }, []);
