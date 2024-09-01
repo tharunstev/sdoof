@@ -65,11 +65,11 @@ const Recipe = ({ search, cuisine }) => {
         ))}
       </div>
 
-      // <Pagination
-      //   recipe={forpage.length}
-      //   perpage={perpage}
-      //   pageChange={handlePageChange}
-      // />
+      {/* <Pagination
+        recipe={forpage.length}
+        perpage={perpage}
+        pageChange={handlePageChange}
+      /> */}
     </>
   );
 };
