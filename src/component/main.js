@@ -9,7 +9,7 @@ const Recipe = ({ search, cuisine }) => {
   const [recipe, setRecipe] = useState([]);
   const [page, setPage] = useState(1);
   const [perpage, setPerPage] = useState(3);
-
+  const [forpage, setforpage] = useState([]);
 
   useEffect(() => {
     fetch();
@@ -18,6 +18,7 @@ const Recipe = ({ search, cuisine }) => {
   const fetch = async () => {
     const response = await axios.get("https://dummyjson.com/recipes");
     setRecipe(response.data.recipes);
+    setforpage(response.data.recipes);
   };
 
   const lastIndex = page * perpage;
@@ -37,6 +38,8 @@ const Recipe = ({ search, cuisine }) => {
     setPage(pageNumber);
   };
 
+  console.log(forpage, "yoyoy");
+
   return (
     <>
       <div className="comp-data">
@@ -45,24 +48,25 @@ const Recipe = ({ search, cuisine }) => {
             <img src={each.image} alt={each.name} />
 
             <h1>{each.name}</h1>
-            <h2>Ingredients</h2>
-            {each.ingredients.map((eaching, index) => (
-              <p key={index}>
-                {index + 1} : {eaching}
-              </p>
-            ))}
-            <h2>Instructions</h2>
-            {each.instructions.map((ins, index) => (
-              <p key={index}>
-                {index + 1} : {ins}
-              </p>
-            ))}
+            <div className="ingredient">
+              <h2>Ingredients</h2>
+              {each.ingredients.map((eaching, index) => (
+                <p key={index}>{eaching}</p>
+              ))}
+            </div>
+
+            <div className="instructions">
+              <h2>Instructions</h2>
+              {each.instructions.map((ins, index) => (
+                <p key={index}>{ins}</p>
+              ))}
+            </div>
           </div>
         ))}
       </div>
 
       <Pagination
-        recipe={recipe.length}
+        recipe={forpage.length}
         perpage={perpage}
         pageChange={handlePageChange}
       />
