@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Navbar />
       <Recipe />
-      <Pagination />
+     
     </>
   );
 }
